@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Parse
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -17,7 +18,42 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        // register applicaiton notification and start listining for the call
+        NotificationCenter.default.addObserver(forName: Notification.Name("login"),
+                                               object: nil,
+                                               queue: .main) { Notification in
+            self.login()
+        }
+        
+        NotificationCenter.default.addObserver(forName: Notification.Name("logout"),
+                                               object: nil,
+                                               queue: .main) { Notification in
+            self.logout()
+        }
+        
+        if (PFUser.current() != nil) {
+            login()
+        }
     }
+    
+    private func login() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        window?.rootViewController = storyBoard.instantiateViewController(withIdentifier: "FeedNavigationController")
+    }
+    
+    private func logout() {
+        PFUser.logOutInBackground { error in
+            if let error = error {
+                print("Error loging out: \(error.localizedDescription)")
+            } else {
+                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                self.window?.rootViewController = storyBoard.instantiateViewController(withIdentifier: "LoginSignupView")
+            }
+        }
+        
+    }
+
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

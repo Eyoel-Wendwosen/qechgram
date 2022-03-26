@@ -1,0 +1,6 @@
+framework module Pods_QechgramTests {
+  umbrella header "Pods-QechgramTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
