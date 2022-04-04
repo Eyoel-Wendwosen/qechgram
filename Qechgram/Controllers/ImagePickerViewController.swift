@@ -22,6 +22,7 @@ class ImagePickerViewController: UIViewController, UIImagePickerControllerDelega
     
 
     @IBAction func onImageButton(_ sender: Any) {
+        print("Tapped")
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.allowsEditing = true
@@ -39,7 +40,7 @@ class ImagePickerViewController: UIViewController, UIImagePickerControllerDelega
         let image = info[.editedImage] as! UIImage
         
         let size = CGSize(width: 300, height: 300)
-        let scaledImage = image.af_imageScaled(to: size)
+        let scaledImage = image.af.imageAspectScaled(toFill: size, scale: 1)
         
         imageView.image = scaledImage
         

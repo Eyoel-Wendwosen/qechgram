@@ -39,7 +39,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func login() {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        window?.rootViewController = storyBoard.instantiateViewController(withIdentifier: "FeedNavigationController")
+        window?.rootViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarController")
     }
     
     private func logout() {

@@ -21,6 +21,7 @@
 		62492B0027EE83F3003374A7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62492AFF27EE83F3003374A7 /* FeedViewController.swift */; };
 		62492B0227EEA18D003374A7 /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62492B0127EEA18D003374A7 /* ImagePickerViewController.swift */; };
 		62749E9027EEB7A800651A0E /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62749E8F27EEB7A800651A0E /* PostCell.swift */; };
+		6287317127FA297E00F60767 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6287317027FA297E00F60767 /* CommentCell.swift */; };
 		81B2B198F8A8E5FD0F5900AB /* Pods_QechgramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725EAA10BDB248474348E8F9 /* Pods_QechgramTests.framework */; };
 		AF2530ADFDCF81C4F904011F /* Pods_Qechgram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 569F68FFF82533489A1E4BA8 /* Pods_Qechgram.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		62492AFF27EE83F3003374A7 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		62492B0127EEA18D003374A7 /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
 		62749E8F27EEB7A800651A0E /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		6287317027FA297E00F60767 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		725EAA10BDB248474348E8F9 /* Pods_QechgramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QechgramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A04A321F596C914CD72462 /* Pods-Qechgram-QechgramUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qechgram-QechgramUITests.debug.xcconfig"; path = "Target Support Files/Pods-Qechgram-QechgramUITests/Pods-Qechgram-QechgramUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E699185608F9441FA5BFEA4E /* Pods-QechgramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QechgramTests.release.xcconfig"; path = "Target Support Files/Pods-QechgramTests/Pods-QechgramTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,12 +136,12 @@
 		62492AC727EE7EBA003374A7 /* Qechgram */ = {
 			isa = PBXGroup;
 			children = (
+				6287316F27FA295F00F60767 /* Cells */,
 				62492AFA27EE82B6003374A7 /* Secret */,
 				62492AF927EE82AC003374A7 /* Views */,
 				62492AF827EE8296003374A7 /* Controllers */,
 				62492AC827EE7EBA003374A7 /* AppDelegate.swift */,
 				62492ACA27EE7EBA003374A7 /* SceneDelegate.swift */,
-				62492ACE27EE7EBA003374A7 /* Main.storyboard */,
 				62492AD127EE7EBD003374A7 /* Assets.xcassets */,
 				62492AD327EE7EBD003374A7 /* LaunchScreen.storyboard */,
 				62492AD627EE7EBD003374A7 /* Info.plist */,
@@ -170,7 +172,6 @@
 				62492AFD27EE83BA003374A7 /* LoginSignupViewController.swift */,
 				62492AFF27EE83F3003374A7 /* FeedViewController.swift */,
 				62492B0127EEA18D003374A7 /* ImagePickerViewController.swift */,
-				62749E8F27EEB7A800651A0E /* PostCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -178,6 +179,7 @@
 		62492AF927EE82AC003374A7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				62492ACE27EE7EBA003374A7 /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -188,6 +190,15 @@
 				62492AFB27EE82CA003374A7 /* Secret.swift */,
 			);
 			path = Secret;
+			sourceTree = "<group>";
+		};
+		6287316F27FA295F00F60767 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				62749E8F27EEB7A800651A0E /* PostCell.swift */,
+				6287317027FA297E00F60767 /* CommentCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		E6CE09E0B8323AB40746106F /* Pods */ = {
@@ -449,6 +460,7 @@
 				62492B0027EE83F3003374A7 /* FeedViewController.swift in Sources */,
 				62492AC927EE7EBA003374A7 /* AppDelegate.swift in Sources */,
 				62492ACB27EE7EBA003374A7 /* SceneDelegate.swift in Sources */,
+				6287317127FA297E00F60767 /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

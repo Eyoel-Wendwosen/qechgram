@@ -12,9 +12,15 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var profileImageview: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        profileImageview.layer.borderWidth = 1
+        profileImageview.layer.masksToBounds = false
+        profileImageview.layer.borderColor = UIColor.white.cgColor
+        profileImageview.layer.cornerRadius = profileImageview.frame.size.height / 2
+        profileImageview.clipsToBounds = true
         // Initialization code
     }
 
@@ -27,7 +33,14 @@ class PostCell: UITableViewCell {
     func configure(post: PFObject) {
         let user = post["owner"] as! PFUser
         usernameLabel.text = user.username
-        captionLabel.text = post["caption"] as! String
+        captionLabel.text = post["caption"] as? String
+        
+        if (user["profile_image"] != nil) {
+            let imageData = user["profile_image"] as! PFFileObject
+            let imageUrl = imageData.url!
+            let url = URL(string: imageUrl)!
+            profileImageview.af_setImage(withURL: url)
+        }
         
         let imageData = post["image"] as! PFFileObject
         let imageUrl = imageData.url!

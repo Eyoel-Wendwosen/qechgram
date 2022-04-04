@@ -8,6 +8,7 @@ target 'Qechgram' do
   # Pods for Qechgram
   pod 'Parse'
   pod 'AlamofireImage' 
+  pod 'MessageInputBar'
 
   target 'QechgramTests' do
     inherit! :search_paths
